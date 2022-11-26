@@ -18,8 +18,13 @@ window.addEventListener('load', function () {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data);
-                    const {temperature, summary, icon} = data.currently;
+                    const { temp } = data.main;
+                    const { description } = data.weather[0];
+                    const { name } = data;
+                    // Set DOM elements from the API
+                    temperatureDegree.textContent = temp;
+                    temperatureDescription.textContent = description;
+                    locationTimezone.textContent = name;
                 });
 		});
 	}
