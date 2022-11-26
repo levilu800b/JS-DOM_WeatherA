@@ -21,7 +21,7 @@ window.addEventListener('load', function () {
                     const { temp } = data.main;
                     const { description } = data.weather[0];
                     const { name } = data;
-                    const {icon} = data.weather[0];
+                    const { icon } = data.weather[0];
                     // Set DOM elements from the API
                     temperatureDegree.textContent = temp;
                     temperatureDescription.textContent = description;
@@ -32,9 +32,10 @@ window.addEventListener('load', function () {
 		});
 	}
 
+    // Function to set icons
     function setIcons(icon, iconID) {
-        const skycons = new Skycons({ color: "white" });
-        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        const skycons = new Skycons({ color: 'white' });
+        const currentIcon = icon.replace(/-/g, '_').toUpperCase();
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
